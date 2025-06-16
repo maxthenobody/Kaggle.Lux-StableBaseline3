@@ -34,10 +34,11 @@ This project implements an **experimental reinforcement learning agent** for the
 * Debugging training of a complex model: we often had to investigate why learning stalled, which involved analyzing reward scaling, gradient norms, and occasionally instrumenting the code with printouts of distributions or implementing curriculum adjustments. This mirrors real-world RL development, which requires equal parts intuition and empirical tuning.
 
 Despite the lack of a competition medal, the **primary goal of learning was absolutely met**. The project showcases the ability to **take initiative** and build a complex AI agent from the ground up, navigate through research challenges, and adapt open-source tools beyond their original scope. This kind of experimental project is invaluable preparation for tackling practical machine learning problems in a professional environment.
-Training Curves (Placeholder)
+
+## Training Curves (Placeholder)
 Below is a placeholder for training performance graphs (e.g. average reward per episode over time, loss curves, etc.). These charts illustrate the agent’s learning progress. In a complete README, we would include screenshots or plots of the training curves here for visualization.
 
-Project Structure
+## Project Structure
 The repository is organized into several directories with Jupyter notebooks and supporting modules:
 Notebooks/EDA/ – Exploratory Data Analysis. Contains notebooks for exploring the Lux AI environment and data. For example, testing_env.ipynb and simple-ppo-training.ipynb were used early on to validate the environment interface and run small-scale PPO tests. These notebooks helped define observation structures, verify reward signals, and ensure the custom gym wrapper worked correctly before full training.
 Notebooks/Agent_Development/ – Iterative Agent Development. This is the core of the project, with notebooks documenting different development stages (timestamped by date). Key components include:
