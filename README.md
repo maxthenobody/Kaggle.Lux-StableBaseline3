@@ -38,6 +38,8 @@ Despite the lack of a competition medal, the **primary goal of learning was abso
 ## Training Curves (Placeholder)
 Below is a placeholder for training performance graphs (e.g. average reward per episode over time, loss curves, etc.). These charts illustrate the agent’s learning progress. In a complete README, we would include screenshots or plots of the training curves here for visualization.
 
+![Training Metrics Example](<images/Screenshot from 2025-03-09 23-57-56.png>)
+
 ## Project Structure
 The repository is organized into several directories with Jupyter notebooks and supporting modules:
 Notebooks/EDA/ – Exploratory Data Analysis. Contains notebooks for exploring the Lux AI environment and data. For example, testing_env.ipynb and simple-ppo-training.ipynb were used early on to validate the environment interface and run small-scale PPO tests. These notebooks helped define observation structures, verify reward signals, and ensure the custom gym wrapper worked correctly before full training.
