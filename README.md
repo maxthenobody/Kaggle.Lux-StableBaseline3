@@ -1,4 +1,4 @@
-# Lux AI Season 3 – Reinforcement Learning Agent (Kaggle Competition)
+# Lux AI Season 3 – Reinforcement Learning Neural Net Agent (Kaggle Competition)
 https://www.kaggle.com/competitions/lux-ai-season-3
 
 ## Overview
