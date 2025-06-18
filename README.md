@@ -175,6 +175,7 @@ MultiInputActorCriticPolicy(
   (value_net): Linear(in_features=128, out_features=1, bias=True)
 )
 ```
+<sub>**▲Model Architecture**</sub>
 
 * **Stable Baselines3 Customization**: Extended the SB3 framework by subclassing and modifying its components to use the custom network. For example, a bespoke MultiInputPolicy was implemented to incorporate the CNN extractor and an enhanced MLP backbone. We integrated these components into SB3’s PPO training loop, effectively **injecting our custom model into the SB3 pipeline** while reusing stable training algorithms (e.g. advantage estimation, optimization routines). This demonstrates deep understanding of the RL library’s internals and how to extend them.
 * **Multi-Discrete Action Handling**: The Lux AI game requires selecting actions for up to 16 units simultaneously, with each action composed of multiple parts (e.g. action type and target coordinates). We implemented a **custom action distribution** to handle this multi-discrete action space. The policy’s forward pass outputs a structured set of logits which are then sampled into per-unit actions (including conditional sub-actions for targeting). This involved building a tailored output layer and sampling procedure (using PyTorch) to ensure the agent can issue commands to all units each time-step.
