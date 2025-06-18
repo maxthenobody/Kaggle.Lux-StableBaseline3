@@ -8,7 +8,8 @@ This project implements an **experimental reinforcement learning agent** for the
 * **Custom Gym Environment Wrapper**: Developed a custom OpenAI Gym-compatible wrapper for the Lux AI environment to output a rich **dictionary observation space** and handle the multi-agent setup. The observation includes multiple feature planes (e.g. a 24x24 map of terrain and energy, vision masks) and unit state vectors for both teams. This wrapper makes it possible to interface Lux AI with standard RL libraries.
 * **Neural Network Architecture Innovations**: Designed and integrated a **custom neural network** for the agent’s policy/value function. A **CNN-based feature extractor** processes spatial 24x24 grid data (e.g. maps of resources/terrain) while other numerical features are flattened and concatenated. This **Multi-input** architecture combines convolutional layers for spatial features with fully-connected layers for non-spatial data, enabling the agent to handle the diverse observation inputs.
 
-```MultiInputActorCriticPolicy(
+```
+MultiInputActorCriticPolicy(
   (features_extractor): CustomFeatureExtractor(
     (cnn_extractor): OptimizedModule(
       (_orig_mod): Sequential(
@@ -172,7 +173,8 @@ This project implements an **experimental reinforcement learning agent** for the
   )
   (action_net): Linear(in_features=1024, out_features=576, bias=True)
   (value_net): Linear(in_features=128, out_features=1, bias=True)
-)```
+)
+```
 
 * **Stable Baselines3 Customization**: Extended the SB3 framework by subclassing and modifying its components to use the custom network. For example, a bespoke MultiInputPolicy was implemented to incorporate the CNN extractor and an enhanced MLP backbone. We integrated these components into SB3’s PPO training loop, effectively **injecting our custom model into the SB3 pipeline** while reusing stable training algorithms (e.g. advantage estimation, optimization routines). This demonstrates deep understanding of the RL library’s internals and how to extend them.
 * **Multi-Discrete Action Handling**: The Lux AI game requires selecting actions for up to 16 units simultaneously, with each action composed of multiple parts (e.g. action type and target coordinates). We implemented a **custom action distribution** to handle this multi-discrete action space. The policy’s forward pass outputs a structured set of logits which are then sampled into per-unit actions (including conditional sub-actions for targeting). This involved building a tailored output layer and sampling procedure (using PyTorch) to ensure the agent can issue commands to all units each time-step.
